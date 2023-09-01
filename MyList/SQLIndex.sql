@@ -19,7 +19,7 @@
 
 -- Declare variables
 DECLARE @Counter INT = 1
-DECLARE @MaxRecords INT = 1000000
+DECLARE @MaxRecords INT = 10000
 
 -- Start inserting records
 WHILE @Counter <= @MaxRecords
@@ -40,5 +40,22 @@ BEGIN
     SET @Counter = @Counter + 1
 END
 
+Select * from Employees
 
-Select Name from Employees Where Id=536
+Select Name from Employees Where id= 536
+
+Select Name, Email from Employees Where Name='Employee536'
+
+Create Index IX_Employees_Name ON Employees (Name ASC)
+
+Execute sp_helpindex Employees
+
+create Clustered Index IX_Employees_Department_Email
+ON Employees(Department DESC, Email Asc)
+
+--drop index Employees.IX_Employees_Name
+
+--Adding Unique constraint to non clustered index
+ALTER TABLE Employees
+ADD CONSTRAINT UQ_Employees_Name
+UNIQUE (Name)
