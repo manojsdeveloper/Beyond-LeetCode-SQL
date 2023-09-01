@@ -6,7 +6,7 @@
     )
 
 
---	-- Create the Employees table if it doesn't exist
+-- Create the Employees table if it doesn't exist
 --IF OBJECT_ID('Employees', 'U') IS NULL
 --BEGIN
 --    CREATE TABLE Employees (
