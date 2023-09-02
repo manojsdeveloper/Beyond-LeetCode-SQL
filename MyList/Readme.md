@@ -16,3 +16,5 @@ In the index itself, the data is stored in an ascending or descending order of t
 1. Only one clustered index per table, where as you can have more than one non clustered index.
 2. Clustered index is faster than a non clustered index, because, the clustered index has to refer back to the table, if the selected column not present in the table.
 3. Clustered index determines the storage order of rows in the table, and hence doesn't require additional disk space, but where as a Non Clustered index is stored separately from the table, additional storage space is required.
+
+--For testing purpose I'm going to push this test changes to my branch here
