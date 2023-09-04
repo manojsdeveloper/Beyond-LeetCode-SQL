@@ -1,3 +1,9 @@
+# SQL Indexes
+
+![Alt text](image.png)
+
+![Alt text](image-1.png)
+
 # Clustered Index
 A clustered index is an index in a database that determines the physical order of data rows in a table. It organizes the table's data on disk according to the indexed column, improving the performance of range-based queries and data retrieval. Each table can have only one clustered index, often based on the primary key.
 However the index can contain multiple columns(a composite index).
