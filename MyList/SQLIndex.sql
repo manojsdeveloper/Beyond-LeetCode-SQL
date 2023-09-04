@@ -1,21 +1,21 @@
- CREATE TABLE Employees (
+ --CREATE TABLE Employees (
+ --       Id INT PRIMARY KEY IDENTITY,
+ --       [Name] NVARCHAR(50),
+ --       Email NVARCHAR(50),
+ --       Department NVARCHAR(50)
+ --   )
+
+------------------------------------START-Index-------------------------------------------------
+ -- Create the Employees table if it doesn't exist
+IF OBJECT_ID('Employees', 'U') IS NULL
+BEGIN
+    CREATE TABLE Employees (
         Id INT PRIMARY KEY IDENTITY,
         [Name] NVARCHAR(50),
         Email NVARCHAR(50),
         Department NVARCHAR(50)
     )
-
-
--- Create the Employees table if it doesn't exist
---IF OBJECT_ID('Employees', 'U') IS NULL
---BEGIN
---    CREATE TABLE Employees (
---        Id INT PRIMARY KEY IDENTITY,
---        [Name] NVARCHAR(50),
---        Email NVARCHAR(50),
---        Department NVARCHAR(50)
---    )
---END
+END
 
 -- Declare variables
 DECLARE @Counter INT = 1
@@ -40,7 +40,21 @@ BEGIN
     SET @Counter = @Counter + 1
 END
 
-Select * from Employees
+
+Select * from Employees where Id=999
+
+Select * from Employees where Name='Employee999'
+
+----------Create--Name-as-Non-Clustered-Index------------
+--USE [Testing]
+--GO
+--CREATE NONCLUSTERED INDEX [<Name of Missing Index, sysyname,>]
+--ON [dbo].[Employees]([Name])
+--GO
+
+CREATE NONCLUSTERED INDEX IX_Employees_Name
+ON [dbo].[Employees]([Name])
+----------------------------------------------------------------------------------------
 
 Select Name from Employees Where id= 536
 

@@ -1,3 +1,9 @@
+# SQL Indexes
+
+![Alt text](image.png)
+
+![Alt text](image-1.png)
+
 # Clustered Index
 A clustered index is an index in a database that determines the physical order of data rows in a table. It organizes the table's data on disk according to the indexed column, improving the performance of range-based queries and data retrieval. Each table can have only one clustered index, often based on the primary key.
 However the index can contain multiple columns(a composite index).
@@ -17,4 +23,11 @@ In the index itself, the data is stored in an ascending or descending order of t
 2. Clustered index is faster than a non clustered index, because, the clustered index has to refer back to the table, if the selected column not present in the table.
 3. Clustered index determines the storage order of rows in the table, and hence doesn't require additional disk space, but where as a Non Clustered index is stored separately from the table, additional storage space is required.
 
---For testing purpose I'm going to push this test changes to my branch here
+# Unique Index
+Unique index is used to enforce uniqueness of key values in the index.
+Note: By default, PRIMARY KEY constraint, creates a unique clustered index.
+
+UNIQUENESS is a property of an index, and both CLUSTERED and NONCLUSTERED indexes can be UNIQUE.
+Difference between Unique Constraint and Unique Index?
+There are no major differences between a unique constraint and a unique index. In fact, when you add a unique constraint, a unique index gets created behind the scenes.
+
