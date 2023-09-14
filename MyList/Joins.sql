@@ -52,6 +52,9 @@ Insert into tblEmployee values (9, 'James', 'Male', 6500, NULL)
 Insert into tblEmployee values (10, 'Russell', 'Male', 8800, NULL)
 Go
 
+Select * from tblEmployee
+Select * from tblEmployee
+
 SELECT Name, Gender, Salary, DepartmentName
 FROM tblEmployee
 INNER JOIN tblDepartment
